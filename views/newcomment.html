@@ -1,0 +1,9 @@
+<form action="?page=add" method="POST" enctype="multipart/form-data">
+	<input type="text" name="Comment"/>
+	<input type="submit" value="Salvesta"/> 
+</form>
+<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+	<?php endif;?>

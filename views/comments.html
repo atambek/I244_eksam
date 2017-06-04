@@ -1,0 +1,34 @@
+<form action="?page=view" method="POST" enctype="multipart/form-data">
+	<h1 class="big-text-info">Lisatud märkused</h1>
+	<div class="container">		
+		<?php foreach($comments as $key=>$comment):?>
+			<div style="padding-left:30px; padding-top:20px;">
+				<br>
+				<table border="1">
+					<tr>
+						<th class="text-info2">
+							ID
+						</th>
+						<th class="text-info2">
+							Märkus
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<em><?php echo $comment['ID'];?></em>
+						</td>
+						<td>
+							<em><?php echo $comment['Comment'];?></em>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br>
+		<?php endforeach;?>	
+	</div>
+</form>
+<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+<?php endif;?>
