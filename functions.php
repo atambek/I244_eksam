@@ -44,3 +44,15 @@ function show(){
 	//header("Location: ?page=show");
 	include_once('views/comments.html');
 }
+
+function edit($id){
+	global $connection;
+	$query ="SELECT * FROM atambek_eksam_comments WHERE ID = '$id'";
+	$result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
+	$comments = array();
+	while ($comment=mysqli_fetch_assoc($result)) {
+			$comments[$comment['ID']]=$comment;
+	}
+	//header("Location: ?page=show");
+	//include_once('views/editcomment.html');
+}

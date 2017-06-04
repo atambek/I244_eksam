@@ -18,8 +18,11 @@ switch($page){
 	case "view":
 		show();
 	break;
+	case "edit":
+		edit();
+	break;
 	default:
-		include_once('views/comments.html');
+		include_once('views/newcomment.html');
 }
 
 include_once('views/foot.html');
